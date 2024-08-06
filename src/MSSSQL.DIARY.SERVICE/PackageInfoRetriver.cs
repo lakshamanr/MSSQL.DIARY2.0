@@ -2,14 +2,12 @@
 using Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask;
 using Microsoft.SqlServer.Dts.Tasks.FileSystemTask;
 using Microsoft.SqlServer.Dts.Tasks.ScriptTask;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MSSSQL.DIARY.SERVICE.Model;
+using Newtonsoft.Json;
 
 namespace MSSSQL.DIARY.SERVICE
 {
