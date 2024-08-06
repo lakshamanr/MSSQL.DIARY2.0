@@ -1,0 +1,258 @@
+{
+    "data": [
+        {
+            "data": {
+                "name": "HumanResources.Employee"
+            },
+            "children": [
+                {
+                    "data": {
+                        "name": "dbo.ufnGetContactInformation"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "dbo.uspGetEmployeeManagers"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "dbo.uspGetManagerEmployees"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.dEmployee"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.EmployeeDepartmentHistory"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.EmployeePayHistory"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.JobCandidate"
+                    },
+                    "children": [
+                        {
+                            "data": {
+                                "name": "dbo.uspSearchCandidateResumes"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "HumanResources.vJobCandidate"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "HumanResources.vJobCandidateEducation"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "HumanResources.vJobCandidateEmployment"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.uspUpdateEmployeeHireInfo"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.uspUpdateEmployeeLogin"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.uspUpdateEmployeePersonalInfo"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.vEmployee"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.vEmployeeDepartment"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "HumanResources.vEmployeeDepartmentHistory"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "Production.Document"
+                    },
+                    "children": [
+                        {
+                            "data": {
+                                "name": "Production.ProductDocument"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "data": {
+                        "name": "Purchasing.PurchaseOrderHeader"
+                    },
+                    "children": [
+                        {
+                            "data": {
+                                "name": "Purchasing.iPurchaseOrderDetail"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "Purchasing.PurchaseOrderDetail"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "Purchasing.uPurchaseOrderDetail"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "Purchasing.uPurchaseOrderHeader"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "data": {
+                        "name": "Sales.SalesPerson"
+                    },
+                    "children": [
+                        {
+                            "data": {
+                                "name": "Sales.SalesOrderHeader"
+                            },
+                            "children": [
+                                {
+                                    "data": {
+                                        "name": "Sales.iduSalesOrderDetail"
+                                    },
+                                    "children": []
+                                },
+                                {
+                                    "data": {
+                                        "name": "Sales.SalesOrderDetail"
+                                    },
+                                    "children": []
+                                },
+                                {
+                                    "data": {
+                                        "name": "Sales.SalesOrderHeaderSalesReason"
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "data": {
+                                "name": "Sales.SalesPersonQuotaHistory"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "Sales.SalesTerritoryHistory"
+                            },
+                            "children": []
+                        },
+                        {
+                            "data": {
+                                "name": "Sales.Store"
+                            },
+                            "children": [
+                                {
+                                    "data": {
+                                        "name": "Sales.Customer"
+                                    },
+                                    "children": [
+                                        {
+                                            "data": {
+                                                "name": "Sales.vIndividualCustomer"
+                                            },
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "data": {
+                                        "name": "Sales.vStoreWithAddresses"
+                                    },
+                                    "children": []
+                                },
+                                {
+                                    "data": {
+                                        "name": "Sales.vStoreWithContacts"
+                                    },
+                                    "children": []
+                                },
+                                {
+                                    "data": {
+                                        "name": "Sales.vStoreWithDemographics"
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "data": {
+                                "name": "Sales.uSalesOrderHeader"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "data": {
+                        "name": "Sales.vSalesPerson"
+                    },
+                    "children": []
+                },
+                {
+                    "data": {
+                        "name": "Sales.vSalesPersonSalesByFiscalYears"
+                    },
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

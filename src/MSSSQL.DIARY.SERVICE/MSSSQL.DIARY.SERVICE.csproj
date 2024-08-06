@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B771FD7A-910B-4A6C-93F4-0B5020CE805E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MSSSQL.DIARY.SERVICE</RootNamespace>
+    <AssemblyName>MSSSQL.DIARY.SERVICE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MSSSQL.DIARY.SERVICE.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.FileSystemTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ScriptTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.SQLTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ServiceProcess" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ChildPackageHandler.cs" />
+    <Compile Include="Model\ConnectionHandler.cs" />
+    <Compile Include="Model\emailHandler.cs" />
+    <Compile Include="Model\EmailHandler1.cs" />
+    <Compile Include="Model\ExecuteSQLTaskHandler.cs" />
+    <Compile Include="Model\FileSystemTaskHandler.cs" />
+    <Compile Include="Model\ftpHandler.cs" />
+    <Compile Include="Model\FTPHandler1.cs" />
+    <Compile Include="MyEventListener.cs" />
+    <Compile Include="PackageInfoRetriver.cs" />
+    <Compile Include="PackageJsonHandler.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScripTaskHandler.cs" />
+    <Compile Include="Model\ScriptTaskHandler.cs" />
+    <Compile Include="SSISPackages.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SSISPackages.Designer.cs">
+      <DependentUpon>SSISPackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\VariableHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WinServiceInstall.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSISPackages.resx">
+      <DependentUpon>SSISPackages.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\Attunity.SqlServer.CDCControlTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ASTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.BulkInsertTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.DataProfilingTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.DmQueryTask.dll" />
+    <Content Include="libs\Microsoft.SQLServer.DTSPipelineWrap.dll" />
+    <Content Include="libs\Microsoft.SqlServer.DTSRuntimeWrap.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ExecProcTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ExpressionTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.FileSystemTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.FtpTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.MaintenancePlanTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ManagedDTS.dll" />
+    <Content Include="libs\Microsoft.SqlServer.Management.CollectorTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.MSMQTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ScriptTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.SendMailTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.SQLTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferDatabasesTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferErrorMessagesTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferJobsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferLoginsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferObjectsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferSqlServerObjectsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferStoredProceduresTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WebServiceTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WMIDRTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WMIEWTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.XmlTask.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

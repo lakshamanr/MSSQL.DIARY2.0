@@ -1,0 +1,35 @@
+
+<amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="MSSQL Diary " [active]="true">
+
+  <div *ngIf="!iblnHiddeLeftMenu">
+    <button class="btn" (click)="RefreshCache()"><i class="fa fa-refresh"></i></button>
+    <button class="btn" (click)="HomePage()"><i class="fa fa-home"></i></button>
+    <button class="btn" (click)="LogOut()"><i class="fa fa-sign-out"></i></button>
+    <label>Logged In As :{{istrlogiggedUserName}} </label>
+  </div>
+  <div *ngIf="iblnHiddeLeftMenu">
+    <button class="btn" (click)="AdminHomePage()"><i class="fa fa-home"></i></button>
+    <button class="btn" (click)="LogOut()"><i class="fa fa-sign-out"></i></button>
+  </div>
+  <amexio-accordion-tab *ngIf="!iblnHiddeLeftMenu" amexioColorPalette [color-palette]="''" [gradient]="true" header="Object Explorer" [active]="true">
+
+    <div class=" ">
+      <div class="cell">  
+        <amexio-tree-filter-view [data-reader]="'data'"
+                                 (nodeClick)="getNodeData($event)"
+                                 [data]="leftmenujsonvalues">
+        </amexio-tree-filter-view> 
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab *ngIf="SSISMode" amexioColorPalette [color-palette]="''" [gradient]="true" header=" Load SSIS Packages" [active]="true">
+
+    <a [routerLink]="['/LoadSSISPackage']">Upload SSIS package details </a>
+    <amexio-tree-filter-view [data-reader]="'data'"
+                             (nodeClick)="getSSISNodeData($event)"
+                             [data]="leftmenuSSISjsonvalues">
+    </amexio-tree-filter-view>
+
+  </amexio-accordion-tab>
+</amexio-accordion-tab>

@@ -1,0 +1,116 @@
+<!--<ngx-ui-loader></ngx-ui-loader>-->
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Scalar Functions " [gradient]="true"
+    [active]="true">
+
+    <div class="table">
+      <div class="cell">
+        <h5>
+          <img src="./assets/icons/Function_Scalar.png" style="width: 30px !important;">
+          {{FunctionName}}
+        </h5>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="MS Description " [gradient]="true"
+    [active]="true">
+    <div class="table" *ngIf="!iblnShowEditBox">
+      <div class="cell">
+        <p>
+          {{ms_description}}
+        </p>
+      </div>
+      <a (click)="ShowModelPOP($event)" class="btn btn-default btn-lg a-btn-slide-text">
+        <span class="fa fa-edit"></span>
+      </a>
+    </div>
+
+    <div class="form-group" *ngIf="iblnShowEditBox">
+      <textarea class="form-control" rows="5" id="comment" [(ngModel)]="ms_description"> </textarea>
+      <div class="form-group" style="margin-left: 94%;">
+
+        <a (click)="CancelTableMsDesciption($event)"><i class="fa fa-2x fa-times"></i></a>&nbsp;
+        <a (click)="SaveTableMsDesciption($event)"><i class="fa fa-2x fa-save"></i></a>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Function Properties" [gradient]="true"
+    [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Uses ansi Nulls</div>
+        <div class="cell">Uses quoted identifier</div>
+        <div class="cell">Create date</div>
+        <div class="cell">Modify date</div>
+      </div>
+
+      <div *ngFor="let Property of functionProperties " class="row">
+        <div class="cell">{{Property.uses_ansi_nulls}} </div>
+        <div class="cell">{{Property.uses_quoted_identifier}}</div>
+        <div class="cell">{{Property.create_date}} </div>
+        <div class="cell">{{Property.modify_date}}</div>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Parameters" [gradient]="true" [active]="true">
+
+
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Name</div>
+        <div class="cell">Type</div>
+        <div class="cell">Updated</div>
+        <div class="cell">Selected</div>
+        <div class="cell">Parameter Description</div>
+      </div>
+
+      <div *ngFor="let Property of FunctionParametersInfo " class="row">
+        <div class="cell">{{Property.name}} </div>
+        <div class="cell">{{Property.type}}</div>
+        <div class="cell">{{Property.updated}} </div>
+        <div class="cell">{{Property.selected}}</div>
+        <div class="cell">{{Property.column_name}} </div>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Function Create Script " [gradient]="true"
+    [active]="true">
+
+    <div *ngIf="showCreateScript">
+      <ngx-prism [language]="language">
+        {{FunCreateScript.createFunctionscript}}
+      </ngx-prism>
+    </div>
+  </amexio-accordion-tab>
+
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Used By " [active]="true">
+
+
+
+    <div class="table">
+      <div class="cell">
+        <ul>
+          <li *ngFor="let Property of functiodDependencies ">
+
+            <a class="cell" [routerLink]="['/tblName',Property.NevigationLink]"> {{Property.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </amexio-accordion-tab>
+
+
+
+
+</amexio-accordion>

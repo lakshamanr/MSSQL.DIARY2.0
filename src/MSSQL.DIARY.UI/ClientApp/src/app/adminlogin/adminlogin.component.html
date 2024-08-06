@@ -1,0 +1,170 @@
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="" [active]="true">
+    <div class="">
+      <label> Server Details : </label>
+      <select (change)="filterServer($event.target.value)" id="ServerNames" style="height: 100%;">
+        <option> Select Server </option>
+        <option [ngValue]="item.serveR_NAME" *ngFor="let item of lstservers">{{item.serveR_NAME}}</option>
+      </select>
+
+    </div>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab *ngIf="iblnShowPanel" amexioColorPalette [color-palette]="''" [gradient]="true"
+    header="Add New User" [active]="true">
+
+    <div class="">
+      <div>
+        <div class="table">
+          <div class="rowGrid">
+            <label for="username"> User Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+            <input type="text" [(ngModel)]="users.userName" id="username" />
+            <span class="text-danger" *ngIf="iblnUserName">Please enter UserName</span>
+          </div>
+        </div>
+        <div class="table">
+          <div class="rowGrid">
+            <label for="password">Password :
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" [(ngModel)]="users.password" id="password" />
+            <span class="text-danger" *ngIf="iblnPassword">Please enter Password</span>
+          </div>
+        </div>
+        <div class="table">
+          <div class="rowGrid">
+            <label for="servername">Server Name :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" [(ngModel)]="users.serveR_NAME" id="servername" />
+            <span class="text-danger" *ngIf="iblnSERVER_NAME">Please enter Server Name</span>
+          </div>
+        </div>
+        <div class="table">
+          <div class="rowGrid">
+            <label for="connectionstring"> Connection String :&nbsp;</label>
+            <textarea cols="50" [(ngModel)]="users.connectioN_STRING" id="connectionstring"></textarea>
+            <span class="text-danger" *ngIf="iblnCONNECTION_STRING">Please enter Connection String</span>
+          </div>
+        </div>
+        <div class="table">
+          <div class="rowGrid">
+            <label for="isAdmin">Is Admin
+              :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="checkbox" [(ngModel)]="users.isAdmin" id="isAdmin" />
+            <span class="text-danger" *ngIf="iblnIsAdmin"></span>
+          </div>
+        </div>
+
+        <div class=" ">
+          <div class="">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="btn btn-primary" type="submit" value="Save" id="btnSubmit" (click)="OnSaveClick()" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input class="btn btn-danger" type="button" value="Cancel" id="btnCancel" (click)="OnCancelClick()" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab *ngIf="iblnUserPanel" amexioColorPalette [color-palette]="''" [gradient]="true"
+    header="User Details" [active]="true">
+    <div class="row">
+      <div class="col-md-5">
+        <input type="text" class="form-control table" placeholder="Search" [(ngModel)]="query" id="listSearch">
+
+      </div>
+      <div class="col-md-5">
+        <button class="btn" id="adduser" (click)="ShowAddUserPlanel()" value=""><i class="fa fa-plus"></i>Add
+          User</button>
+
+      </div>
+    </div>
+
+    <p-table dataKey="id" editMode="row" [value]="lstServerBaseUsers | search: query " [responsive]="true"
+      [paginator]="true" [rows]="10" [resizableColumns]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pResizableColumn>ID</th>
+          <th pResizableColumn>UserName</th>
+          <th pResizableColumn>Password</th>
+          <th pResizableColumn>Server Name</th>
+          <th pResizableColumn>Connection string</th>
+          <th pResizableColumn>Is Admin</th>
+          <th pResizableColumn style="width:8em"></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+        <tr [pEditableRow]="rowData">
+          <td>
+            {{rowData.id}}
+          </td>
+          <td class="ui-resizable-column">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="text" [(ngModel)]="rowData.userName" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{rowData.userName}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td class="ui-resizable-column">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="text" [(ngModel)]="rowData.password" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{rowData.password}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td class="ui-resizable-column">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="text" [(ngModel)]="rowData.serveR_NAME" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{rowData.serveR_NAME}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td class="ui-resizable-column">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <textarea [(ngModel)]="rowData.connectioN_STRING" required></textarea>
+              </ng-template>
+              <ng-template pTemplate="output">
+                <textarea [(ngModel)]="rowData.connectioN_STRING" disabled></textarea>
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td class="ui-resizable-column">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="checkbox" [(ngModel)]="rowData.isAdmin" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{rowData.isAdmin}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+
+          <td style="text-align:center">
+            <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil" class="ui-button-info"
+              (click)="onRowEditInit(rowData)"></button>
+            <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check" class="ui-button-success"
+              style="margin-right: .5em" (click)="onRowEditSave(rowData)"></button>
+            <button *ngIf="editing" pButton type="button" pCancelEditableRow icon="pi pi-times" class="ui-button-danger"
+              (click)="onRowEditCancel(rowData, ri)"></button>
+            <button *ngIf="!editing" pButton type="button" pCancelEditableRow icon="fa fa-trash"
+              class="ui-button-danger" (click)="onRowEditDelete(rowData, ri)"></button>
+          </td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </amexio-accordion-tab>
+
+
+</amexio-accordion>

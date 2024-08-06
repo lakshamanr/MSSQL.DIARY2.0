@@ -1,0 +1,44 @@
+<body>  
+  <hr />
+  <div>  
+    <ngx-ui-loader></ngx-ui-loader>
+    <div *ngIf="!iblnShowPages">
+      <div class="" style="margin-left: initial;margin-top: 5px;">
+        <div class="split-example ex-percent">
+          <as-split unit="percent"
+                    direction="horizontal"
+                    #split="asSplit"
+                    gutterSize="10"
+                    [gutterDblClickDuration]="dblClickTime"
+                    [useTransition]="useTransition"
+                    (dragStart)="log('dragStart', $event)"
+                    (dragEnd)="log('dragEnd', $event)"
+                    (gutterClick)="log('gutterClick', $event)"
+                    (gutterDblClick)="log('gutterDblClick', $event)"
+                    (transitionEnd)="log('transitionEnd', $event)"
+                    style="margin-left: 5px !important"> 
+            <as-split-area [ngClass]="status ? 'HideSplitBar' : 'showSplitBar'" size="25" #area1="asSplitArea" style="">
+              <div class="scollbar scrollbar-primary pre-scrollable leftmenuExtendedProperties setWindowHeight" id="leftMenu">
+                <app-left-nav-menu></app-left-nav-menu>
+              </div>
+            </as-split-area>
+            <as-split-area size="75" [ngClass]="status ? 'ShowFullPageMode' : 'RemoveFullPageMode'" #area2="asSplitArea" id="asSplitArea2">
+              <div class="scollbar scrollbar-primary setWindowHeight">
+                <div id="center">
+                   <router-outlet> </router-outlet>
+                </div>
+              </div>
+            </as-split-area>
+          </as-split>
+        </div>
+        <hr />
+
+      </div>
+    </div>
+    <div *ngIf="iblnShowPages">
+      <app-login-page></app-login-page>
+    </div>
+  </div>
+</body>
+
+ 

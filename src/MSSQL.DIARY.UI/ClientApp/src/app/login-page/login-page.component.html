@@ -1,0 +1,29 @@
+
+
+<div class="logincontent">
+  <form>
+    <div class="loginheading">
+      Login
+    </div>
+    <label for="txtServerName">
+      Servername:
+    </label>
+    <input type="text" id="txtServerName" [(ngModel)]="istrServerName" name="txtServerName" style="margin-left: 7px !important;" />
+
+    <label for="txtUserName">
+      Username:  &nbsp;&nbsp;
+    </label>
+    <input type="text" id="txtUserName" [(ngModel)]="istrUserName" name="txtUserName" style="margin-left: 7px !important;" />
+    <label for="txtPassword">
+      Password:  &nbsp;&nbsp;&nbsp;&nbsp;
+    </label>
+    <input type="password" id="txtPassword" [(ngModel)]="istrPassword" name="txtPassword" />
+    <div class="loginremember">
+      <label style="color:red">{{istrErrorMessagese}}</label>
+      <input type="checkbox" id="chbRemember" name="chbRemember" /><label class="check"
+                                                                          for="chbRemember">Remember me next time</label>
+      <input type="submit" class="loginbtn" value="Login" id="btnSubmit" (click)="Submit()" />
+
+    </div>
+  </form>
+</div>

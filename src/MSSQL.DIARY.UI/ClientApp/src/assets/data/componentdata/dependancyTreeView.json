@@ -1,0 +1,259 @@
+{
+
+  "data": [
+    {
+      "text": "HumanResources.Employee",
+      "icon": "fa fa-folder-open",
+      "expand": "true",
+      "children": [
+        {
+          "text": "Sales.vSalesPersonSalesByFiscalYears",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "Sales.vSalesPerson",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "Sales.SalesPerson",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": [
+            {
+              "text": "Sales.uSalesOrderHeader",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Sales.Store",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": [
+                {
+                  "text": "Sales.vStoreWithDemographics",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                },
+                {
+                  "text": "Sales.vStoreWithContacts",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                },
+                {
+                  "text": "Sales.vStoreWithAddresses",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                },
+                {
+                  "text": "Sales.Customer",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": [
+                    {
+                      "text": "Sales.vIndividualCustomer",
+                      "icon": "fa fa-folder-open",
+                      "expand": "true",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "text": "Sales.SalesTerritoryHistory",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Sales.SalesPersonQuotaHistory",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Sales.SalesOrderHeader",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": [
+                {
+                  "text": "Sales.SalesOrderHeaderSalesReason",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                },
+                {
+                  "text": "Sales.SalesOrderDetail",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                },
+                {
+                  "text": "Sales.iduSalesOrderDetail",
+                  "icon": "fa fa-folder-open",
+                  "expand": "true",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Purchasing.PurchaseOrderHeader",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": [
+            {
+              "text": "Purchasing.uPurchaseOrderHeader",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Purchasing.uPurchaseOrderDetail",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Purchasing.PurchaseOrderDetail",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "Purchasing.iPurchaseOrderDetail",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            }
+          ]
+        },
+        {
+          "text": "Production.Document",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": [
+            {
+              "text": "Production.ProductDocument",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            }
+          ]
+        },
+        {
+          "text": "HumanResources.vEmployeeDepartmentHistory",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.vEmployeeDepartment",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.vEmployee",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.uspUpdateEmployeePersonalInfo",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.uspUpdateEmployeeLogin",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.uspUpdateEmployeeHireInfo",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.JobCandidate",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": [
+            {
+              "text": "HumanResources.vJobCandidateEmployment",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "HumanResources.vJobCandidateEducation",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "HumanResources.vJobCandidate",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            },
+            {
+              "text": "dbo.uspSearchCandidateResumes",
+              "icon": "fa fa-folder-open",
+              "expand": "true",
+              "children": []
+            }
+          ]
+        },
+        {
+          "text": "HumanResources.EmployeePayHistory",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.EmployeeDepartmentHistory",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "HumanResources.dEmployee",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "dbo.uspGetManagerEmployees",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "dbo.uspGetEmployeeManagers",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        },
+        {
+          "text": "dbo.ufnGetContactInformation",
+          "icon": "fa fa-folder-open",
+          "expand": "true",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

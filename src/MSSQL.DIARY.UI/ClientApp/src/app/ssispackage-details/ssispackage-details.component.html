@@ -1,0 +1,165 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<amexio-accordion [multi-open]="true">
+  
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SearchName" [gradient]="true" [active]="true">
+    <hr />
+    <input type="text" class="form-control table" placeholder="Search" [(ngModel)]="query" id="listSearch">
+    <hr />
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package Name" [gradient]="true" [active]="true"> 
+    <div class="table">
+      <div class="cell">
+        <h5>{{pkgHandler.packageLocation}}</h5>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package Variables" [gradient]="true" [active]="true">
+    
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Name</div>
+        <div class="cell">Value</div>
+      </div>
+
+      <div *ngFor="let Property of pkgHandler.variable |search: query" class="row">
+        <div [innerHTML]="Property.name |highlight: query" class="cell">{{Property.name}} </div>
+        <div [innerHTML]="Property.value | highlight: query " class="cell">{{Property.value}}</div>
+      </div>
+    </div> 
+  </amexio-accordion-tab> 
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package FTP Tasks" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Connection</div>
+        <div class="cell">LocalPath</div>
+        <div class="cell">Operation</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.ftpTasks |search: query" class="row">
+        <div [innerHTML]="Property.connection |highlight: query" class="cell">{{Property.connection}} </div>
+        <div [innerHTML]="Property.localPath | highlight: query " class="cell">{{Property.localPath}}</div>
+        <div [innerHTML]="Property.operation | highlight: query " class="cell">{{Property.operation}}</div>
+      </div>
+    </div> 
+  </amexio-accordion-tab>
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package EmailsTasks Tasks" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">CCline</div>
+        <div class="cell">FormLine</div>
+        <div class="cell">Subject</div>
+        <div class="cell">ToLine</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.emailsTasks |search: query" class="row">
+        <div [innerHTML]="Property.cCline |highlight: query" class="cell">{{Property.cCline}} </div>
+        <div [innerHTML]="Property.formLine |highlight: query" class="cell">{{Property.formLine}} </div>
+        <div [innerHTML]="Property.subject | highlight: query " class="cell">{{Property.subject}}</div>
+        <div [innerHTML]="Property.toLine | highlight: query " class="cell">{{Property.toLine}}</div>
+      </div>
+    </div> 
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package Connections" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Name</div>
+        <div class="cell">ConnectionString</div> 
+      </div>
+      <div *ngFor="let Property of pkgHandler.connections |search: query" class="row">
+        <div [innerHTML]="Property.name |highlight: query" class="cell">{{Property.name}} </div>
+        <div [innerHTML]="Property.connectionString | highlight: query " class="cell">{{Property.connectionString}}</div>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package Stored Procedure" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header"> 
+        <div class="cell">ConnectionName</div>
+        <div class="cell">SqlStatementSource</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.executeSQLTask |search: query" class="row"> 
+       
+          <div *ngIf="Property.isStoredProcedure" [innerHTML]="Property.connectionName |highlight: query" class="cell">{{Property.connectionName}} </div>
+          <div *ngIf="Property.isStoredProcedure" [innerHTML]="Property.sqlStatementSource | highlight: query " class="cell">{{Property.sqlStatementSource}}</div> 
+         
+      </div>
+    </div>
+  </amexio-accordion-tab>
+      <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package SQL Queries" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header"> 
+        <div class="cell">ConnectionName</div>
+        <div class="cell">SqlStatementSource</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.executeSQLTask |search: query" class="row"> 
+          <div *ngIf="!Property.isStoredProcedure" [innerHTML]="Property.connectionName |highlight: query" class="cell">{{Property.connectionName}} </div>
+          <div *ngIf="!Property.isStoredProcedure" [innerHTML]="Property.sqlStatementSource | highlight: query " class="cell">{{Property.sqlStatementSource}}</div>  
+      </div>
+    </div>
+  </amexio-accordion-tab>
+        <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Child Packages" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header"> 
+        <div class="cell">Name</div>
+        <div class="cell">ChildPackageLocation</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.childPackages |search: query" class="row">
+        <a  class="cell" data-title="Name" [routerLink]="['/SSISPackagesDetails',Property.name ]" target="_blank"> {{Property.name}}</a>
+        <div [innerHTML]="Property.childPackageLocation | highlight: query " class="cell">{{Property.childPackageLocation}}</div>  
+      </div>
+    </div>
+  </amexio-accordion-tab>
+   <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package File System " [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">TaskOperationType</div>
+        <div class="cell">OperationName</div>
+        <div class="cell">TaskOverwriteDestFile</div>
+        <div class="cell">TaskSourcePath</div>
+        <div class="cell">TaskIsSourceVariable</div>
+        <div class="cell">TaskDestinationPath</div>
+        <div class="cell">TaskIsDestinationVariable</div>
+        <div class="cell">TaskFileAttributes</div>
+        <div class="cell">TaskPreservedAttributes</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.fileSystemTask |search: query" class="row">
+        <div [innerHTML]="Property.taskOperationType |highlight: query" class="cell">{{Property.taskOperationType}} </div>
+        <div [innerHTML]="Property.operationName | highlight: query " class="cell">{{Property.operationName}}</div>
+        <div [innerHTML]="Property.taskOverwriteDestFile | highlight: query " class="cell">{{Property.taskOverwriteDestFile}}</div>
+        <div [innerHTML]="Property.taskSourcePath | highlight: query " class="cell">{{Property.taskSourcePath}}</div>
+        <div [innerHTML]="Property.taskIsSourceVariable | highlight: query " class="cell">{{Property.taskIsSourceVariable}}</div>
+        <div [innerHTML]="Property.taskDestinationPath | highlight: query " class="cell">{{Property.taskDestinationPath}}</div>
+        <div [innerHTML]="Property.taskIsDestinationVariable | highlight: query " class="cell">{{Property.taskIsDestinationVariable}}</div>
+        <div [innerHTML]="Property.taskFileAttributes | highlight: query " class="cell">{{Property.taskFileAttributes}}</div>
+        <div [innerHTML]="Property.taskPreservedAttributes | highlight: query " class="cell">{{Property.taskPreservedAttributes}}</div>  
+      </div>
+    </div>
+  </amexio-accordion-tab>
+     <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="SSIS Package Scrip Tasks" [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">ReadWriteVariables</div>
+        <div class="cell">ReadOnlyVariables</div>
+        <div class="cell">DefaultActiveItem</div>
+        <div class="cell">ProjectTemplatePath</div>
+        <div class="cell">ScriptLanguage</div>
+        <div class="cell">EntryPoint</div>
+        <div class="cell">ScriptProjectName</div>
+        <div class="cell">ScriptLoaded</div>
+        <div class="cell">DebugMode</div>
+        <div class="cell">SuspendRequired</div>
+      </div>
+      <div *ngFor="let Property of pkgHandler.scripTasks |search: query" class="row">
+        <div [innerHTML]="Property.readWriteVariables |highlight: query" class="cell">{{Property.readWriteVariables}} </div>
+        <div [innerHTML]="Property.readOnlyVariables | highlight: query " class="cell">{{Property.readOnlyVariables}}</div>
+        <div [innerHTML]="Property.defaultActiveItem | highlight: query " class="cell">{{Property.defaultActiveItem}}</div>
+        <div [innerHTML]="Property.projectTemplatePath | highlight: query " class="cell">{{Property.projectTemplatePath}}</div>
+        <div [innerHTML]="Property.scriptLanguage | highlight: query " class="cell">{{Property.scriptLanguage}}</div>
+        <div [innerHTML]="Property.entryPoint | highlight: query " class="cell">{{Property.entryPoint}}</div>
+        <div [innerHTML]="Property.taskIsDestinationVariable | highlight: query " class="cell">{{Property.scriptProjectName}}</div>
+        <div [innerHTML]="Property.scriptProjectName | highlight: query " class="cell">{{Property.scriptLoaded}}</div>
+        <div [innerHTML]="Property.debugMode | highlight: query " class="cell">{{Property.debugMode}}</div>  >
+        <div [innerHTML]="Property.suspendRequired | highlight: query " class="cell">{{Property.suspendRequired}}</div> 
+      </div>
+    </div>
+  </amexio-accordion-tab>
+</amexio-accordion>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MSSSQL.DIARY.SERVICE.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SSISPackageSourceLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\lakshamanrokade\Desktop\old\SSIS</Value>
+    </Setting>
+    <Setting Name="ServiceLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Users\lakshamanrokade\Desktop\old\SSIS\ServiceLog</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,105 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQL.DIARY.COMN", "src\MSSQL.DIARY.COMMON\MSSQL.DIARY.COMN.csproj", "{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQL.DIARY.EF", "src\MSSQL.DIARY.EF\MSSQL.DIARY.EF.csproj", "{0E927839-90EA-4AA1-83B1-5D05869CDD5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQL.DIARY.SRV", "src\MSSQL.DIARY.SRV\MSSQL.DIARY.SRV.csproj", "{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQL.DIARY.UI", "src\MSSQL.DIARY.UI\MSSQL.DIARY.UI.csproj", "{AC3D4288-F9DD-49ED-A522-491FD34834A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSSQL.DIARY.SERVICE", "src\MSSSQL.DIARY.SERVICE\MSSSQL.DIARY.SERVICE.csproj", "{B771FD7A-910B-4A6C-93F4-0B5020CE805E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSQL.DIARY.ERDIAGRAM", "src\MSSQL.DIARY.ERDIAGRAM\MSSQL.DIARY.ERDIAGRAM.csproj", "{0803AEF1-FE9E-476C-AB79-1027323DAD53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Debug|x86.Build.0 = Debug|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{1EBBEF2C-7F00-4B7A-8349-AE2134CB56D6}.Release|x86.Build.0 = Release|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Debug|x86.Build.0 = Debug|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Release|x86.ActiveCfg = Release|Any CPU
+		{0E927839-90EA-4AA1-83B1-5D05869CDD5E}.Release|x86.Build.0 = Release|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{DCF008AC-23C2-4376-AA9D-F25D0391F9EF}.Release|x86.Build.0 = Release|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC3D4288-F9DD-49ED-A522-491FD34834A4}.Release|x86.Build.0 = Release|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Debug|x86.Build.0 = Debug|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Release|x86.ActiveCfg = Release|Any CPU
+		{B771FD7A-910B-4A6C-93F4-0B5020CE805E}.Release|x86.Build.0 = Release|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Debug|x86.Build.0 = Debug|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Release|x86.ActiveCfg = Release|Any CPU
+		{0803AEF1-FE9E-476C-AB79-1027323DAD53}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F7F2283-C00B-4145-86D3-2239B0286A9A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sqldocumemtionproduct.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\MSSQL.DIARY.COMMON\\MSSQL.DIARY.COMN.csproj
+		SccProjectName1 = src/MSSQL.DIARY.COMMON
+		SccLocalPath1 = src\\MSSQL.DIARY.COMMON
+		SccProjectUniqueName2 = src\\MSSQL.DIARY.EF\\MSSQL.DIARY.EF.csproj
+		SccProjectName2 = src/MSSQL.DIARY.EF
+		SccLocalPath2 = src\\MSSQL.DIARY.EF
+		SccProjectUniqueName3 = src\\MSSQL.DIARY.SRV\\MSSQL.DIARY.SRV.csproj
+		SccProjectName3 = src/MSSQL.DIARY.SRV
+		SccLocalPath3 = src\\MSSQL.DIARY.SRV
+		SccProjectUniqueName4 = src\\MSSQL.DIARY.UI\\MSSQL.DIARY.UI.csproj
+		SccProjectName4 = src/MSSQL.DIARY.UI
+		SccLocalPath4 = src\\MSSQL.DIARY.UI
+		SccProjectUniqueName5 = src\\MSSSQL.DIARY.SERVICE\\MSSSQL.DIARY.SERVICE.csproj
+		SccProjectName5 = src/MSSSQL.DIARY.SERVICE
+		SccLocalPath5 = src\\MSSSQL.DIARY.SERVICE
+		SccProjectUniqueName6 = src\\MSSQL.DIARY.ERDIAGRAM\\MSSQL.DIARY.ERDIAGRAM.csproj
+		SccProjectName6 = src/MSSQL.DIARY.ERDIAGRAM
+		SccLocalPath6 = src\\MSSQL.DIARY.ERDIAGRAM
+	EndGlobalSection
+EndGlobal

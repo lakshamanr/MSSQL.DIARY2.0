@@ -1,0 +1,218 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+@import '~prismjs/themes/prism-coy.css';
+@import '~prismjs/themes/prism-funky.css';
+@import '~prismjs/themes/prism-okaidia.css';
+@import '~prismjs/themes/prism-solarizedlight.css';
+@import '~prismjs/themes/prism.css';
+
+.as-split-gutter {
+  height: auto !important;
+  background-color: none !important;
+}
+
+
+hr {
+  height: 4px !important;
+  border: 0 !important;
+  margin-top: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.hr-primary {
+  background-image: -webkit-linear-gradient(left, rgba(66, 133, 244, .8), rgba(66, 133, 244, .6), rgba(0, 0, 0, 0));
+}
+
+body {
+  overflow-y: hidden !important;
+  font-size: 95% !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: -webkit-linear-gradient(0, blue 50%, white 100%);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2196f3 !important;
+}
+
+::-webkit-scrollbar-track {
+  background: white !important;
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/*body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}*/
+
+.treenode {
+  padding-left: 0px !important;
+  border-left: dotted !important;
+  border-width: 1.3px !important;
+  border-left-color: #2196f3 !important;
+}
+
+.fa-angle-down {
+  padding-left: 3px !important;
+}
+
+.fa-angle-right {
+  padding-left: 3px !important;
+}
+
+.pre[class*="language-"]>code {
+  border-left: 0px solid #358ccb !important;
+}
+
+
+.tree-node-label {
+  overflow: visible !important;
+  display: contents !important;
+  display: inline-block !important;
+}
+
+.leftmenuExtendedProperties {
+  background-color: var(--componentBGColor);
+  color: var(--componentFontColor);
+}
+
+.card-container {
+  box-shadow: none !important;
+}
+
+.as-split-gutter-icon {
+  background-color: #184569 !important;
+  max-height: 95vh !important;
+  height: 95vh !important;
+}
+
+.tree-node-label-selected:after {
+  color: red !important;
+}
+
+.tree-node-label:hover {
+  color: red !important;
+}
+
+hr {
+  height: 2px !important;
+  background-color: #cc9897 !important;
+}
+
+.treenode-content::selection {
+  color: red;
+}
+
+.white-space:nowrap :hover {
+  color: red !important;
+}
+
+.ChangeColor {
+  background-color: red;
+}
+
+.horizontaltreeview-node {
+  margin-left: 301px !important;
+}
+
+.row.header[_ngcontent-ng-cli-universal-c7] {
+  font-weight: 500 !important;
+}
+
+body .ui-table .ui-table-thead>tr>th {
+  color: #ffffff !important;
+  background-color: #184569 !important;
+}
+
+.panel {
+  padding: 3px !important;
+  overflow: auto;
+}
+
+.spinner {
+  margin-top: 95vh !important;
+}
+
+.spinner:before {
+  margin-left: -38% !important;
+}
+
+.accordion {
+  background-color: #184569 !important;
+  padding: 5px !important;
+  width: 100% !important;
+  font-size: 15px !important;
+}
+
+.setWindowHeight {
+  max-height: 95vh !important;
+}
+
+.TreeViewColor td div .ui-treenode-content {
+  background-color: #184569;
+}
+
+.qp-statement-header-row>div {
+  position: inherit !important;
+}
+
+mark {
+  outline: 1px solid #ffc107;
+  font-weight: bold;
+}
+
+.progress-inner {
+  min-width: 1% !important;
+}
+
+.progress-inner {
+  min-width: 1% !important;
+}
+
+#Objects li:last-child {
+  display: none !important;
+}
+
+.dbTrigger {
+  background-image: url('./assets/icons/DdlTrigger.png');
+  background-color: red;
+}
+
+.dbTable {
+  background-image: url('./assets/icons/Table.png');
+  background-color: red;
+}
+
+.modal-content {
+  height: 600px !important;
+}
+
+.modal-body {
+  margin-top: -20px !important;
+}

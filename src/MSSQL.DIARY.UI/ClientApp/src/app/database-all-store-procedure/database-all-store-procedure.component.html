@@ -1,0 +1,141 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<amexio-accordion [multi-open]="true">
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Search in all Tables"
+    [active]="true">
+    <div class="table">
+      <div class="row">
+        <div class="cell">
+          <select (change)="changeSuit($event.target.value)" style="height: 35px !important;">
+            <option selected value="searchInAll">Search In All Store Procedures</option>
+            <option value="searchInSSIS">Search In SSIS Packages</option>
+          </select>
+        </div>
+        <div class="cell">
+          <hr />
+          <input type="text" class="form-control table" placeholder="Search" [(ngModel)]="query" id="listSearch">
+          <hr />
+        </div>
+      </div>
+    </div>
+
+
+
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab *ngIf="searchInAll" amexioColorPalette [color-palette]="'Store Procedures'"
+    header=" All Store Procedures " [gradient]="true" [active]="true">
+
+    <p-table [columns]="cols" [value]="all_database_SP | search: query " dataKey="istrValue" [paginator]="true"
+      [rows]="20">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width: 3em"></th>
+          <th> Store Procedures</th>
+          <th> Description </th>
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+        <tr>
+          <td>
+            <a href="#" [pRowToggler]="rowData">
+              <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+            </a>
+          </td>
+          <td class="cell" *ngFor="let col of columns">
+            <div [innerHTML]="rowData[col.field] | highlight: query"> {{rowData[col.field]}} </div>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+        <tr>
+          <td [attr.colspan]="columns.length + 1">
+
+            <div class="ui-g-12 ui-md-3" style="text-align:center">
+              <h4>
+                <u> <a class="cell" data-title="Name" [routerLink]="['/StoreProcedureDetails',rowData.istrNevigation]">
+                    {{rowData.istrName}}</a></u>
+              </h4>
+            </div>
+            <hr />
+            <div style="margin-left: 70%;">
+              <ul class="row" *ngFor="let columndetails of rowData.lstSSISpackageReferance |  search: query">
+                <li>
+                  <a [innerHTML]="columndetails | highlight: query" class="cell" data-title="Name"
+                    [routerLink]="['/SSISPackagesDetails',columndetails]">{{columndetails}}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="table">
+              <div class="row header">
+                <div class="cell">Create Script </div>
+              </div>
+              <div class="row" *ngFor="let columndetails of rowData.lstrCreateScript |  search: query">
+                <ngx-prism [language]="language">
+                  <div [innerHTML]="columndetails | highlight: query" class="cell">
+                    <p [innerHTML]="columndetails | highlight: query"> {{columndetails}} </p>
+                  </div>
+                </ngx-prism>
+              </div>
+
+            </div>
+            <hr />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </amexio-accordion-tab>
+
+
+  <amexio-accordion-tab *ngIf="searchInSSIS" amexioColorPalette [color-palette]="'Store Procedures'"
+    header="All SSIS Packages" [gradient]="true" [active]="true">
+
+    <p-table [columns]="cols" [value]="all_database_SP" dataKey="istrValue" [paginator]="true" [rows]="20">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width: 3em"></th>
+          <th> Store Procedures </th>
+          <th> Description </th>
+
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+        <tr>
+          <td>
+            <a href="#" [pRowToggler]="rowData">
+              <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+            </a>
+          </td>
+          <td class="cell" *ngFor="let col of columns">
+            <div [innerHTML]="rowData[col.field]"> {{rowData[col.field]}} </div>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+        <tr>
+          <td [attr.colspan]="columns.length + 1">
+
+            <div class="ui-g-12 ui-md-3" style="text-align:center">
+              <h4>
+                <u> <a class="cell" data-title="Name" [routerLink]="['/StoreProcedureDetails',rowData.istrNevigation]">
+                    {{rowData.istrName}}</a></u>
+              </h4>
+            </div>
+            <hr />
+            <div style="margin-left: 70%;">
+              <ul class="row" *ngFor="let columndetails of rowData.lstSSISpackageReferance |  search: query">
+                <li>
+                  <a [innerHTML]="columndetails | highlight: query" class="cell" data-title="Name"
+                    [routerLink]="['/SSISPackagesDetails',columndetails]">{{columndetails}}</a>
+                </li>
+              </ul>
+            </div>
+
+            <hr />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </amexio-accordion-tab>
+</amexio-accordion>

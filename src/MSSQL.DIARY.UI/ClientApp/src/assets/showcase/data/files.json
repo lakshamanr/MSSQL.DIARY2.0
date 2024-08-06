@@ -1,0 +1,262 @@
+{
+  "data": [
+    {
+      "label": "HumanResources.Employee",
+      "expandedIcon": "fa fa-folder-open",
+      "collapsedIcon": "fa fa-folder-close",
+      "data": "This is the Test Infomration",
+      "loading": "true",
+
+      "children": [
+        {
+          "label": "dbo.ufnGetContactInformation",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close", 
+          "children": []
+        },
+        {
+          "label": "dbo.uspGetEmployeeManagers",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "style": "background-color:red",
+          "children": []
+        },
+        {
+          "label": "dbo.uspGetManagerEmployees",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.dEmployee",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.EmployeeDepartmentHistory",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.EmployeePayHistory",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.JobCandidate",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": [
+            {
+              "label": "dbo.uspSearchCandidateResumes",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "HumanResources.vJobCandidate",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "HumanResources.vJobCandidateEducation",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "HumanResources.vJobCandidateEmployment",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "HumanResources.uspUpdateEmployeeHireInfo",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.uspUpdateEmployeeLogin",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.uspUpdateEmployeePersonalInfo",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.vEmployee",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.vEmployeeDepartment",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "HumanResources.vEmployeeDepartmentHistory",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "Production.Document",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": [
+            {
+              "label": "Production.ProductDocument",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Purchasing.PurchaseOrderHeader",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": [
+            {
+              "label": "Purchasing.iPurchaseOrderDetail",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "Purchasing.PurchaseOrderDetail",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "Purchasing.uPurchaseOrderDetail",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "Purchasing.uPurchaseOrderHeader",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Sales.SalesPerson",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": [
+            {
+              "label": "Sales.SalesOrderHeader",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": [
+                {
+                  "label": "Sales.iduSalesOrderDetail",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                },
+                {
+                  "label": "Sales.SalesOrderDetail",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                },
+                {
+                  "label": "Sales.SalesOrderHeaderSalesReason",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Sales.SalesPersonQuotaHistory",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "Sales.SalesTerritoryHistory",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            },
+            {
+              "label": "Sales.Store",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": [
+                {
+                  "label": "Sales.Customer",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": [
+                    {
+                      "label": "Sales.vIndividualCustomer",
+                      "expandedIcon": "fa fa-folder-open",
+                      "collapsedIcon": "fa fa-folder-close",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "label": "Sales.vStoreWithAddresses",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                },
+                {
+                  "label": "Sales.vStoreWithContacts",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                },
+                {
+                  "label": "Sales.vStoreWithDemographics",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder-close",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "label": "Sales.uSalesOrderHeader",
+              "expandedIcon": "fa fa-folder-open",
+              "collapsedIcon": "fa fa-folder-close",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Sales.vSalesPerson",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        },
+        {
+          "label": "Sales.vSalesPersonSalesByFiscalYears",
+          "expandedIcon": "fa fa-folder-open",
+          "collapsedIcon": "fa fa-folder-close",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

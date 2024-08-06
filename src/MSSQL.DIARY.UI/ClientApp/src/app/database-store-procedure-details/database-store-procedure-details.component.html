@@ -1,0 +1,114 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb> 
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Stored Procedure " [gradient]="true" [active]="true">
+
+    <div class="table">
+      <div class="cell">
+        <div *ngIf="iblnShow_sp_name">
+          <h5>
+            <img src="./assets/icons/StoredProcedure.png" style="width: 30px !important;" >
+            {{SP_Name}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="MS Description " [gradient]="true" [active]="true">
+     
+    <div class="table" *ngIf="!iblnShowEditBox">
+      <div class="cell">
+        
+          <div *ngIf="iblnShow_sp_description">
+           <p>
+              {{ms_description}}
+           </p>
+          </div> 
+      
+      </div>
+      <a (click)="ShowEdit($event)" class="btn btn-default btn-lg a-btn-slide-text">
+        <span class="fa fa-edit"></span>
+      </a>
+    </div>
+
+    <div class="form-group" *ngIf="iblnShowEditBox">
+      <textarea class="form-control" rows="5" id="comment" [(ngModel)]="ms_description"> </textarea>
+      <div class="form-group" style="margin-left: 94%;">
+
+        <a (click)="CancelStoreProcMsDesciption($event)"><i class="fa fa-2x fa-times"></i></a>&nbsp;
+        <a (click)="SaveStoreProcMsDesciption($event)"><i class="fa fa-2x fa-save"></i></a>
+      </div>
+    </div>
+
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Objects dependncy Tree" [gradient]="true" [active]="true">
+    <p-tree [value]="filesTree1"
+            layout="horizontal"
+            selectionMode="single"  >
+    </p-tree>
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Parameters " [gradient]="true" [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">  Name </div>
+        <div class="cell">  Type </div>
+        <div class="cell">  Max Length (Bytes) </div>
+        <div class="cell">  MS description. </div>
+
+      </div>
+      <div *ngFor="let property of sp_parameters " class="row">
+        <div class="cell"> {{property.parameter_name}}</div>
+        <div class="cell"> {{property.type}}  </div>
+        <div class="cell"> {{property.length}}</div>
+        <div class="cell">
+          <div>
+            <div *ngIf="!property.HideEdit">
+              <p>
+                {{property.extended_property}}
+              </p>
+              <a (click)="EditGridRow(property.id)" class="">
+                <span class="fa fa-edit"></span>
+              </a>
+            </div>
+            <div *ngIf="property.HideEdit">
+              <textarea class="form-control" rows="2" [(ngModel)]="property.extended_property"> </textarea>
+              <div class="form-group" style="margin-left: 90%;">
+                <a (click)="CancelGridRow(property.id)"><i class="fa fa-1x fa-times"></i></a>&nbsp;
+                <a (click)="SaveGridRow(property.id)"><i class="fa fa-1x fa-save"></i></a>
+              </div>
+            </div> 
+          </div> 
+        </div>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Create Script " [gradient]="true" [active]="true">
+    <div *ngIf="iblncreatescript">
+      <ngx-prism [language]="language">
+        {{sp_create_script.desciption}}
+      </ngx-prism>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Used by " [gradient]="true" [active]="true">
+
+
+    <div class="table">
+      <div class="row header">
+        <div class="cell">  Referencing object name </div>
+        <div class="cell">  Referencing object type </div>
+        <div class="cell"> Referenced object name </div>
+      </div>
+      <div *ngFor="let property of sp_Depencancy " class="row">
+        <div class="cell"> {{property.referencing_object_name}}</div>
+        <div class="cell"> {{property.referencing_object_type}}  </div>
+        <div class="cell"> {{property.referenced_object_name}}</div>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Execution Plan " [gradient]="true" [active]="true">
+    <div id="container"></div>
+  </amexio-accordion-tab>
+</amexio-accordion>

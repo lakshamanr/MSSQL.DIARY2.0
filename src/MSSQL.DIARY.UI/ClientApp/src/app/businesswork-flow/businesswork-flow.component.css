@@ -1,0 +1,3 @@
+table table tbody td div:first-child {
+  display: none;
+}

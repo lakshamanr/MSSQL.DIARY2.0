@@ -1,0 +1,20 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="All SSIS Package" [gradient]="true" [active]="true">
+    <hr />
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" id="listSearch">
+    <hr />
+    <div class="table">
+      <div class="row header">
+        <div class="cell">SSIS Packages </div>
+      </div>
+      <div *ngFor="let Property of GetAllSSISPackages | search: query " class="row">
+        <a [innerHTML]="Property.istrName | highlight: query" class="cell" data-title="SSIS Packages" [routerLink]="['/SSISPackagesDetails',Property.istrName]"> {{Property.istrName}}</a>
+
+      </div>
+    </div>
+  </amexio-accordion-tab>
+ 
+
+</amexio-accordion>

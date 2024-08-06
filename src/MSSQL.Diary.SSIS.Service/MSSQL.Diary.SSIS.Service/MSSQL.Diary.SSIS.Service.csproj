@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBA53AA8-E784-4064-AFA3-C0810E567FAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MSSQL.Diary.SSIS.Service</RootNamespace>
+    <AssemblyName>MSSQL.Diary.SSIS.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Attunity.SqlServer.CDCControlTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=aa342389a732e31c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Attunity.SqlServer.CDCControlTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ASTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ASTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.BulkInsertTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.BulkInsertTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DataProfilingTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.DataProfilingTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DmQueryTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.DmQueryTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>libs\Microsoft.SQLServer.DTSPipelineWrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ExecProcTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ExpressionTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.FileSystemTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.FtpTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.FtpTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.MaintenancePlanTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.MaintenancePlanTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.CollectorTasks, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.Management.CollectorTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.MSMQTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.MSMQTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.ScriptTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.SendMailTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.SQLTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferDatabasesTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferDatabasesTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferErrorMessagesTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferErrorMessagesTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferJobsTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferJobsTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferLoginsTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferLoginsTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferObjectsTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferObjectsTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferSqlServerObjectsTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferSqlServerObjectsTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TransferStoredProceduresTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.TransferStoredProceduresTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WebServiceTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.WebServiceTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WMIDRTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.WMIDRTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.WMIEWTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.WMIEWTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.XmlTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.SqlServer.XmlTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PackageInforHandler.cs" />
+    <Compile Include="PackageJsonHandler.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHandler.cs" />
+    <Compile Include="SSISPackageService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SSISPackageService.Designer.cs">
+      <DependentUpon>SSISPackageService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WinServiceInstall.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\Attunity.SqlServer.CDCControlTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ASTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.BulkInsertTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.DataProfilingTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.DmQueryTask.dll" />
+    <Content Include="libs\Microsoft.SQLServer.DTSPipelineWrap.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ExecProcTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ExpressionTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.FileSystemTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.FtpTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.MaintenancePlanTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ManagedDTS.dll" />
+    <Content Include="libs\Microsoft.SqlServer.Management.CollectorTasks.dll" />
+    <Content Include="libs\Microsoft.SqlServer.MSMQTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.ScriptTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.SendMailTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.SQLTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferDatabasesTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferErrorMessagesTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferJobsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferLoginsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferObjectsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferSqlServerObjectsTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.TransferStoredProceduresTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WebServiceTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WMIDRTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.WMIEWTask.dll" />
+    <Content Include="libs\Microsoft.SqlServer.XmlTask.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

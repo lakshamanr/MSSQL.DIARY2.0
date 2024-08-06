@@ -1,0 +1,10 @@
+.panel {
+  display: block !important;
+  max-height: 95vh !important;
+  height: 528px !important;
+}
+.ng-trigger-accordionStat {
+  display: block !important;
+  max-height: 95vh !important;
+  height: 582px !important;
+}

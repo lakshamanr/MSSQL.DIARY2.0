@@ -1,0 +1,25 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Load SSIS Package details " [gradient]="true" [active]="true">
+    <h3> Please upload appropriate server SSIS packages </h3>
+    <br />
+    <input type="file" (change)="onFileChange($event)" multiple="multiple" />
+    <br />
+    <div *ngIf="theFiles!=undefined && theFiles.length!=undefined && theFiles.length>0">
+      <button class="btn btn-info" (click)="uploadFile()" [disabled]="!theFiles.length">   Upload {{theFiles.length}} Files </button>
+    </div>
+    
+  </amexio-accordion-tab>
+  <amexio-accordion-tab *ngIf="messages!=undefined && messages.length !undefined" amexioColorPalette [color-palette]="''" header="Uploaded SSIS Package details " [gradient]="true" [active]="true">
+     <div *ngIf="messages!=undefined && messages.length !undefined">
+       <h4>
+         Uploaded SSIS Package List
+       </h4>
+      <ul *ngFor="let fileName of messages">
+        <li>
+          {{fileName}}
+        </li>
+      </ul>
+    </div>
+  </amexio-accordion-tab>
+</amexio-accordion>

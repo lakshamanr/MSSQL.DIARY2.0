@@ -1,0 +1,26 @@
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Select Database Module" [gradient]="true"
+    [active]="true">
+    <div class="row">
+      <div class="offset-md-2 col-md-9">
+        <select (change)="filterDatabaseModule($event.target.value)"
+          style="width: 50% !important;height: 39px !important;">
+          <option value="0">--Select Database Modules--</option>
+          <option *ngFor="let modules of databasemodules" value={{modules}}>
+            {{modules}}
+          </option>
+        </select>
+        <button class="btn" (click)="refreshmodule()"><i class="fa fa-refresh"></i></button>
+        <button class="btn" (click)="removemodule()"><i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header=" Selected Work Flow: {{selecteddatamodule}}"
+    [gradient]="true" [active]="true">
+    <div id="container" style="width: 1315px; height: 500px; border:1px solid black; ">
+      <div #dataContainer2></div>
+    </div>
+  </amexio-accordion-tab>
+
+</amexio-accordion>

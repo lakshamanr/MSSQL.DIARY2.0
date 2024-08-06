@@ -1,0 +1,34 @@
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" [active]="true">
+    <div class="row" style="height: 200px !important">
+      <div class="col-md-4">
+        <input type="Text" class="form-control" [(ngModel)]="sqlmoddule" placeholder="Module Name">
+
+      </div>
+      <div class="col-md-2">
+        <button class="btn" (click)="SaveSqlModuleChanges()"><i class="fa fa-save"></i></button>
+      </div>
+      <div class="col-md-6">
+        <angular2-multiselect [data]="all_database_table" [(ngModel)]="selectedItems" [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+          (onDeSelectAll)="onDeSelectAll($event)">
+          <c-item>
+            <ng-template let-item="item">
+              <label>{{item.itemName}}</label>
+            </ng-template>
+          </c-item>
+        </angular2-multiselect>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" [active]="true">
+    <div id="container" style="    width: 1315px;
+    height: 570px;
+    border: 1px solid black;
+">
+      <div #dataContainer></div>
+    </div>
+  </amexio-accordion-tab>
+
+</amexio-accordion>

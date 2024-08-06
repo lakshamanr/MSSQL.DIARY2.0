@@ -1,0 +1,26 @@
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Work Flow " [gradient]="true" [active]="true">
+    <div>
+      <label>Select Work Flow : </label>
+      <select (change)="filterWorkFlow($event.target.value)">
+        <option value="0">--All--</option>
+        <option *ngFor="let workflow of workflowList" value={{workflow}}>
+          {{workflow}}
+        </option>
+      </select>
+
+    </div>
+
+  </amexio-accordion-tab>
+ 
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" header=" Selected Work Flow: {{selectedWorkflow}}" [gradient]="true" [active]="true">
+      <div *ngIf="showTreeView">
+        <p-tree [value]="filesTree1"
+                layout="horizontal"
+                selectionMode="single">
+        </p-tree> 
+      </div>
+ 
+  </amexio-accordion-tab> 
+ 
+</amexio-accordion>

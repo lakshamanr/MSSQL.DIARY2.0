@@ -1,0 +1,157 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Database" [active]="true">
+
+    <div class="table">
+      <div class="cell">
+        <h3>
+          <p class="fa fa-database">
+            {{dbName1}}
+
+          </p>
+        </h3>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Object Types" [active]="true">
+    <div class="table">
+      <div class="cell">
+        <ul id="Objects" *ngIf="iblnShowObjects">
+          <!--<li>
+    <a href="#" (click)="openModalWithComponent()"> ER-Diagram</a>
+  </li>-->
+          <li>
+            <a [routerLink]="['/BusinessModule',dbName]"> Business Module </a>
+          </li>
+          <li *ngFor="let ObjectType of GetDatabaseObjectTypes">
+            <div *ngIf="ObjectType=='Tables'">
+              <img src="./assets/icons/Table.png">
+              <a [routerLink]="['/Tables',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='Views'">
+              <img src="./assets/icons/View.png">
+              <a [routerLink]="['/AllViews',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='Stored Procedures'">
+              <img src="./assets/icons/StoredProcedure.png">
+              <a [routerLink]="['/StoreProcedures',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='Table-valued Functions'">
+              <img src="./assets/icons/Function_Table.png">
+              <a [routerLink]="['/TableValueFunctions',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='Scalar-valued Functions'">
+              <img src="./assets/icons/Function_Scalar.png">
+              <a [routerLink]="['/ScalarFunctions',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='Database Triggers'">
+              <img src="./assets/icons/DdlTrigger.png">
+              <a class="" [routerLink]="['/DatabaseTriggers',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='User-Defined Data Types'">
+              <img src="./assets/icons/UserDefinedDataType.png">
+              <a class="" [routerLink]="['/UserDefinedDataTypes',dbName]"> {{ObjectType}}</a>
+            </div>
+            <div *ngIf="ObjectType=='XML Schema Collections'">
+              <img src="./assets/icons/XmlSchemaCollection.png">
+              {{ObjectType}}
+            </div>
+            <div *ngIf="ObjectType=='Full Text Catalogs'">
+              <img src="./assets/icons/FullTextCatalog.png">
+              {{ObjectType}}
+            </div>
+            <div *ngIf="ObjectType=='Users'">
+              <img src="./assets/icons/User.png">
+              {{ObjectType}}
+            </div>
+            <div *ngIf="ObjectType=='Database Roles'">
+              <img src="./assets/icons/Role_Database.png">
+              {{ObjectType}}
+            </div>
+            <div *ngIf="ObjectType=='Schemas'">
+              <img src="./assets/icons/Schema.png">
+              <a [routerLink]="['/AllSchemas',dbName]"> {{ObjectType}} </a>
+            </div>
+            <div *ngIf="ObjectType=='WorkFlow'">
+              <img src="./assets/icons/Table.png">
+              <a [routerLink]="['/WorkFlow',dbName]"> Business Work Flow </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Database Properties"
+    [active]="true">
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Property</div>
+        <div class="cell">Value</div>
+      </div>
+
+      <div *ngFor="let Property of GetdbPropertValues " class="row">
+        <div class="cell" data-title="Property">{{Property.istrName}} </div>
+        <div class="cell" data-title="Value">{{Property.istrValue}}</div>
+      </div>
+    </div>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Database Options"
+    [active]="true">
+
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Property</div>
+        <div class="cell">Value</div>
+      </div>
+
+      <div *ngFor="let Property of GetdbOptionValues " class="row">
+        <div class="cell" data-title="Property">{{Property.istrName}} </div>
+        <div class="cell" data-title="Value">{{Property.istrValue}}</div>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Files" [active]="true">
+
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Name</div>
+        <div class="cell">Type</div>
+        <div class="cell">Size</div>
+        <div class="cell">File Name</div>
+      </div>
+
+      <div *ngFor="let Property of GetdbFilesDetails " class="row">
+        <div class="cell" data-title="Name">{{Property.name}} </div>
+        <div class="cell" data-title="Type">{{Property.fileType}}</div>
+        <div class="cell" data-title="Size">{{Property.fileSize}} MB</div>
+        <div class="cell" data-title="File Name">{{Property.fileLocation}}</div>
+      </div>
+    </div>
+
+
+  </amexio-accordion-tab>
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="ER-Diagram" [active]="true">
+
+    <button type="button" class="btn btn-primary" (click)="openModalWithComponent()">ER-Diagram</button>
+
+
+    <!--<div>
+      <select id="downloadIamge" (change)="DownloadTheERDiagram($event.target.value)" style="height: 100%;">
+        <option> Select ER Diagram Format To Download </option>
+        <option value="PNG">PNG</option>
+        <option value="JPEG">JPEG</option>
+        <option value="PDF">PDF</option>
+      </select>
+    </div>-->
+
+    <!--<canvas id="cnv" width="5000px" height="5000px">-->
+    <!--<img src="https://svgshare.com/i/9Eo.svg" width="5000px" height="5000px"/>-->
+    <div #dataContainer></div>
+
+  </amexio-accordion-tab>
+
+</amexio-accordion>

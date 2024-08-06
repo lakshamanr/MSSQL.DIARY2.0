@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MSSQL.Diary.SSIS.Service.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SSISPackageSourceLocation" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\MSSQL.DIARY\src\MSSQL.DIARY.UI\ClientApp\src\assets\www</Value>
+    </Setting>
+    <Setting Name="SSISPackageJsonPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\MSSQL.DIARY\src\MSSQL.DIARY.UI\ClientApp\src\assets\www</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

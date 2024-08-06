@@ -1,0 +1,66 @@
+  <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<div *ngFor="let serverName of ServerNames" >
+   
+  <amexio-accordion [multi-open]="true">
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="Server Name"  [gradient]="true" [active]="true">
+      
+      <div class="table">
+        <div class="cell "> <h3><p class="fa fa-desktop">{{serverName}}</p></h3></div>
+      </div>
+    </amexio-accordion-tab> 
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Databases ({{DatabaseNames.length}})" [active]="true">
+      <div class="table">
+          <div class="cell">
+            <ul  id ="Objects">
+              <li *ngFor="let databaseName of DatabaseNames"> 
+                <p  class="fa fa-database">
+                  <a   [routerLink]="['/DatabaseInfo',databaseName+'/'+serverName]"> {{databaseName}}</a> 
+
+                </p> 
+                <li>
+          </ul>
+         </div>
+      </div>
+    </amexio-accordion-tab>
+
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Server Properties" [active]="true">
+ 
+      <div class="table">
+        <div class="row header">
+          <div class="cell">Property</div>
+          <div class="cell">Value</div> 
+        </div> 
+        <div *ngFor="let Property of serverProprties " class="row">
+          <div class="cell">{{Property.istrName}} </div>
+          <div class="cell">{{Property.istrValue}}</div>
+      
+        </div>
+      </div>
+
+     </amexio-accordion-tab>
+
+    <!--<amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="server Setting" [active]="true">
+      <h3>
+        Server setting is reaming..
+      </h3>
+    </amexio-accordion-tab>-->
+    <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Advanced Server Settings" [active]="true">
+
+      <div class="table">
+        <div class="row header">
+          <div class="cell">Property</div>
+          <div class="cell">Value</div>
+        </div>
+        <div *ngFor="let Property of serverAdvanceProprties " class="row">
+          <div class="cell">{{Property.istrName}} </div>
+          <div class="cell">{{Property.istrValue}}</div>
+
+        </div>
+      </div> 
+      
+    </amexio-accordion-tab>
+  </amexio-accordion>
+  
+
+</div>

@@ -1,0 +1,22 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<amexio-accordion [multi-open]="true">
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" header="All Scalar Functions " [gradient]="true"
+    [active]="true">
+    <hr />
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" id="listSearch">
+    <hr />
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Scalar Functions </div>
+        <div class="cell">MS Descriptions</div>
+      </div>
+      <div *ngFor="let Property of all_ScalarFunctions | search: query " class="row">
+        <a [innerHTML]="Property.istrName | highlight: query" class="cell" data-title="Name"
+          [routerLink]="['/ScalarFunctionDetails',Property.istrNevigation]"> {{Property.istrName}}</a>
+        <div [innerHTML]="Property.istrValue | highlight: query" class="cell">{{Property.istrValue}}</div>
+
+      </div>
+    </div>
+  </amexio-accordion-tab>
+
+</amexio-accordion>

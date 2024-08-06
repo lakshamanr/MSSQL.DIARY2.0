@@ -1,0 +1,30 @@
+<!--<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>-->
+<amexio-accordion [multi-open]="true">
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Database Schema"
+    [active]="true">
+    <h4>{{dbSchemaName}}</h4>
+  </amexio-accordion-tab>
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="MS Description "
+    [active]="true">
+
+    {{ms_description.desciption}}
+
+  </amexio-accordion-tab>
+
+
+  <amexio-accordion-tab amexioColorPalette [color-palette]="''" [gradient]="true" header="Refrence" [active]="true">
+    <hr />
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" id="listSearch">
+    <hr />
+    <div class="table">
+      <div *ngFor="let Property of schemReferance | search: query " class="row">
+        <a [innerHTML]="Property.istrName | highlight: query" [routerLink]="['/TableDetails',Property.istrNevigation]">
+          {{Property.istrName}}</a>
+      </div>
+    </div>
+
+  </amexio-accordion-tab>
+
+</amexio-accordion>
