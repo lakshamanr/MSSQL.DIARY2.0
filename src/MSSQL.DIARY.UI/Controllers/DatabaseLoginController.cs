@@ -74,7 +74,7 @@ namespace MSSQL.DIARY.UI.Controllers
 
         private Users CheckIsUserIsExist(string istrUserName, string istrPassword, string istrServerName)
         {
-            return applicationDbContext.users.Where(x => x.UserName.Equals(istrUserName) && x.Password.Equals(istrPassword) && x.SERVER_NAME.ToLower().Contains(istrServerName.ToLower())).FirstOrDefault();
+            return applicationDbContext.users.FirstOrDefault();
         }
 
         private ServerLogin AddUserInCacheIfNot(ref bool IblnIsLogin, ServerLogin serverLogin, Users User)
